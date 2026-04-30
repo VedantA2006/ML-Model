@@ -61,7 +61,7 @@ RISK_PER_TRADE  = 0.01
 POSITION_SIZE   = float(os.getenv("POSITION_SIZE", "0.01"))
 RR_RATIO        = float(os.getenv("RR_RATIO",      "2.9"))
 FEE             = 0.0005
-ML_FILTER_ENABLED = os.getenv("ML_FILTER", "true").lower() == "true"
+ML_FILTER_ENABLED = os.getenv("ML_FILTER", "false").lower() == "true"
 COOLDOWN        = int(os.getenv("COOLDOWN",        "3"))
 
 ATR_GATE        = float(os.getenv("ATR_GATE",      "0.0015"))
@@ -1111,6 +1111,8 @@ def run_live_engine() -> None:
     last_trade:       Optional[dict] = None
     cycle_count:      int            = 0
     last_periodic_ts: float          = time.time()
+    last_processed_candle_time: Optional[str] = None
+    last_signal_time_ms: Optional[float] = None
 
     while True:
         time.sleep(60)
@@ -1126,161 +1128,178 @@ def run_live_engine() -> None:
         if df is None or df.empty:
             log.warning("run_live_engine: ⚠️  Data fetch failed. Skipping cycle.")
         else:
-            latest_row   = df.iloc[-1]
-            current_sig  = get_signal(latest_row)
-            latest_close = float(latest_row["close"])
+            latest_row   = df.iloc[-2]
             candle_time  = str(latest_row["datetime"])
 
-            log.info(
-                f"📊 Latest candle  close={latest_close:.2f}  "
-                f"ema13={latest_row['ema13']:.2f}  "
-                f"ema34={latest_row['ema34']:.2f}  "
-                f"ema89={latest_row['ema89']:.2f}  "
-                f"rsi={latest_row['rsi']:.1f}  "
-                f"atr_pct={latest_row['atr_pct']:.4f}  "
-                f"vol_ok={latest_row['volume'] > latest_row['vol_ma']}"
-            )
-            log.info(
-                f"🔍 Signal evaluation → [{current_sig}]  "
-                f"(last sent: [{last_sent_signal}])"
-            )
+            if candle_time == last_processed_candle_time:
+                pass # Just wait for next close, heartbeat will still fire
+            else:
+                last_processed_candle_time = candle_time
+                current_sig  = get_signal(latest_row)
+                latest_close = float(latest_row["close"])
 
-            if current_sig in ("BUY", "SELL"):
-                if current_sig == last_sent_signal:
+                log.info(
+                    f"📊 Closed candle  close={latest_close:.2f}  "
+                    f"ema13={latest_row['ema13']:.2f}  "
+                    f"ema34={latest_row['ema34']:.2f}  "
+                    f"ema89={latest_row['ema89']:.2f}  "
+                    f"rsi={latest_row['rsi']:.1f}  "
+                    f"atr_pct={latest_row['atr_pct']:.4f}  "
+                    f"vol_ok={latest_row['volume'] > latest_row['vol_ma']}"
+                )
+
+                cooldown_active = False
+                if last_signal_time_ms is not None:
+                    signal_row_idx = df.index[df['time'] == last_signal_time_ms].tolist()
+                    if signal_row_idx:
+                        intervals_passed = df.index[-2] - signal_row_idx[0]
+                        if intervals_passed < COOLDOWN:
+                            cooldown_active = True
+                            log.info(f"⏳ Cooldown active. {intervals_passed}/{COOLDOWN} candles passed. Skipping signal.")
+
+                if not cooldown_active:
                     log.info(
-                        f"⏭️  Duplicate signal [{current_sig}] — already sent. Skipping."
+                        f"🔍 Signal evaluation → [{current_sig}]  "
+                        f"(last sent: [{last_sent_signal}])"
                     )
-                else:
-                    # ── Pre-flight: check for open position ──────────────────
-                    try:
-                        check_url  = SIGNAL_API_URL.replace("/api/trade", "/api/trade/open")
-                        check_resp = requests.get(check_url, timeout=API_TIMEOUT)
-                        if check_resp.ok:
-                            open_trades = check_resp.json()
-                            has_open = any(
-                                t.get("symbol") == SYMBOL and t.get("status") == "OPEN"
-                                for t in open_trades
-                            )
-                            if has_open:
-                                log.info(
-                                    f"🚫 Open position already exists for {SYMBOL}. "
-                                    "Skipping signal."
-                                )
-                                last_sent_signal = current_sig
-                                log.info(f"✔️  Cycle #{cycle_count:04d} complete.\n")
-                                continue
-                    except Exception as exc:
-                        log.warning(f"⚠️  Pre-flight check failed: {exc}. Proceeding.")
 
-                    atr     = float(latest_row["atr"])
-                    rsi     = float(latest_row["rsi"])
-                    sl_dist = atr * SL_MULT
-                    tp_dist = atr * RR_RATIO
-                    sl = latest_close - sl_dist if current_sig == "BUY" else latest_close + sl_dist
-                    tp = latest_close + tp_dist if current_sig == "BUY" else latest_close - tp_dist
-
-                    # ── ML FILTER GATE ─────────────────────────────────────
-                    ml_prob = None
-                    ml_confidence = "N/A"
-                    pos_size = POSITION_SIZE
-
-                    if ml_filter is not None:
-                        try:
-                            ml_features = {
-                                "entry_ema13":    float(latest_row["ema13"]),
-                                "entry_ema34":    float(latest_row["ema34"]),
-                                "entry_ema89":    float(latest_row["ema89"]),
-                                "entry_rsi":      rsi,
-                                "entry_atr_pct":  float(latest_row["atr_pct"]),
-                                "entry_volume":   float(latest_row["volume"]),
-                                "entry_vol_ma":   float(latest_row["vol_ma"]),
-                                "ema13_ema34_gap_pct": (
-                                    (latest_row["ema13"] - latest_row["ema34"])
-                                    / latest_row["ema34"] * 100
-                                ) if latest_row["ema34"] != 0 else 0,
-                                "ema34_ema89_gap_pct": (
-                                    (latest_row["ema34"] - latest_row["ema89"])
-                                    / latest_row["ema89"] * 100
-                                ) if latest_row["ema89"] != 0 else 0,
-                                "close_vs_ema34_pct": (
-                                    (latest_close - latest_row["ema34"])
-                                    / latest_row["ema34"] * 100
-                                ) if latest_row["ema34"] != 0 else 0,
-                                "vol_vs_ma_pct": (
-                                    (latest_row["volume"] - latest_row["vol_ma"])
-                                    / latest_row["vol_ma"] * 100
-                                ) if latest_row["vol_ma"] != 0 else 0,
-                                "side": current_sig,
-                            }
-                            ml_prob = ml_filter.predict_trade_probability(ml_features)
-                            ml_confidence = ml_filter.classify_confidence(ml_prob)
-
+                    if current_sig in ("BUY", "SELL"):
+                        if current_sig == last_sent_signal:
                             log.info(
-                                f"🤖 ML Filter: prob={ml_prob:.3f} "
-                                f"confidence={ml_confidence}"
+                                f"⏭️  Duplicate signal [{current_sig}] — already sent. Skipping."
                             )
+                        else:
+                            # ── Pre-flight: check for open position ──────────────────
+                            try:
+                                check_url  = SIGNAL_API_URL.replace("/api/trade", "/api/trade/open")
+                                check_resp = requests.get(check_url, timeout=API_TIMEOUT)
+                                if check_resp.ok:
+                                    open_trades = check_resp.json()
+                                    has_open = any(
+                                        t.get("symbol") == SYMBOL and t.get("status") == "OPEN"
+                                        for t in open_trades
+                                    )
+                                    if has_open:
+                                        log.info(
+                                            f"🚫 Open position already exists for {SYMBOL}. "
+                                            "Skipping signal."
+                                        )
+                                        last_sent_signal = current_sig
+                                        log.info(f"✔️  Cycle #{cycle_count:04d} complete.\n")
+                                        continue
+                            except Exception as exc:
+                                log.warning(f"⚠️  Pre-flight check failed: {exc}. Proceeding.")
 
-                            if ml_confidence == "SKIP":
-                                log.info(
-                                    f"🚫 ML FILTER REJECTED [{current_sig}] — "
-                                    f"prob={ml_prob:.3f} < 0.70. Skipping."
-                                )
-                                last_sent_signal = current_sig
-                                log.info(f"✔️  Cycle #{cycle_count:04d} complete.\n")
-                                continue
+                            atr     = float(latest_row["atr"])
+                            rsi     = float(latest_row["rsi"])
+                            sl_dist = atr * SL_MULT
+                            tp_dist = atr * RR_RATIO
+                            sl = latest_close - sl_dist if current_sig == "BUY" else latest_close + sl_dist
+                            tp = latest_close + tp_dist if current_sig == "BUY" else latest_close - tp_dist
 
-                            # Adjust position size based on confidence
-                            if position_sizer is not None:
-                                sizing = position_sizer.calculate_risk(
-                                    balance=INITIAL_BALANCE,
-                                    probability=ml_prob,
-                                )
-                                if ml_confidence == "HIGH_CONFIDENCE":
-                                    pos_size = round(POSITION_SIZE * 1.5, 4)
+                            # ── ML FILTER GATE ─────────────────────────────────────
+                            ml_prob = None
+                            ml_confidence = "N/A"
+                            pos_size = POSITION_SIZE
+
+                            if ml_filter is not None:
+                                try:
+                                    ml_features = {
+                                        "entry_ema13":    float(latest_row["ema13"]),
+                                        "entry_ema34":    float(latest_row["ema34"]),
+                                        "entry_ema89":    float(latest_row["ema89"]),
+                                        "entry_rsi":      rsi,
+                                        "entry_atr_pct":  float(latest_row["atr_pct"]),
+                                        "entry_volume":   float(latest_row["volume"]),
+                                        "entry_vol_ma":   float(latest_row["vol_ma"]),
+                                        "ema13_ema34_gap_pct": (
+                                            (latest_row["ema13"] - latest_row["ema34"])
+                                            / latest_row["ema34"] * 100
+                                        ) if latest_row["ema34"] != 0 else 0,
+                                        "ema34_ema89_gap_pct": (
+                                            (latest_row["ema34"] - latest_row["ema89"])
+                                            / latest_row["ema89"] * 100
+                                        ) if latest_row["ema89"] != 0 else 0,
+                                        "close_vs_ema34_pct": (
+                                            (latest_close - latest_row["ema34"])
+                                            / latest_row["ema34"] * 100
+                                        ) if latest_row["ema34"] != 0 else 0,
+                                        "vol_vs_ma_pct": (
+                                            (latest_row["volume"] - latest_row["vol_ma"])
+                                            / latest_row["vol_ma"] * 100
+                                        ) if latest_row["vol_ma"] != 0 else 0,
+                                        "side": current_sig,
+                                    }
+                                    ml_prob = ml_filter.predict_trade_probability(ml_features)
+                                    ml_confidence = ml_filter.classify_confidence(ml_prob)
+
                                     log.info(
-                                        f"💎 HIGH CONFIDENCE — position size "
-                                        f"increased to {pos_size}"
+                                        f"🤖 ML Filter: prob={ml_prob:.3f} "
+                                        f"confidence={ml_confidence}"
                                     )
 
-                        except Exception as exc:
-                            log.warning(
-                                f"⚠️  ML filter error: {exc}. "
-                                "Proceeding with unfiltered signal."
-                            )
+                                    if ml_confidence == "SKIP":
+                                        log.info(
+                                            f"🚫 ML FILTER REJECTED [{current_sig}] — "
+                                            f"prob={ml_prob:.3f} < 0.70. Skipping."
+                                        )
+                                        last_sent_signal = current_sig
+                                        log.info(f"✔️  Cycle #{cycle_count:04d} complete.\n")
+                                        continue
 
-                    signal_payload = {
-                        "symbol":        SYMBOL,
-                        "side":          current_sig,
-                        "entry":         round(latest_close, 2),
-                        "sl":            round(sl, 2),
-                        "tp":            round(tp, 2),
-                        "position_size": pos_size,
-                        "atr":           round(atr, 4),
-                        "rsi":           round(rsi, 2),
-                        "ml_probability": ml_prob,
-                        "ml_confidence":  ml_confidence,
-                    }
-                    success = send_signal_to_api(signal_payload)
+                                    # Adjust position size based on confidence
+                                    if position_sizer is not None:
+                                        sizing = position_sizer.calculate_risk(
+                                            balance=INITIAL_BALANCE,
+                                            probability=ml_prob,
+                                        )
+                                        if ml_confidence == "HIGH_CONFIDENCE":
+                                            pos_size = round(POSITION_SIZE * 1.5, 4)
+                                            log.info(
+                                                f"💎 HIGH CONFIDENCE — position size "
+                                                f"increased to {pos_size}"
+                                            )
 
-                    if success:
-                        last_sent_signal = current_sig
-                        last_trade = {
-                            "signal":   current_sig,
-                            "price":    latest_close,
-                            "time":     candle_time,
-                            "interval": INTERVAL,
-                        }
-                        log.info(f"✅ Signal [{current_sig}] sent & recorded.")
+                                except Exception as exc:
+                                    log.warning(
+                                        f"⚠️  ML filter error: {exc}. "
+                                        "Proceeding with unfiltered signal."
+                                    )
+
+                            signal_payload = {
+                                "symbol":        SYMBOL,
+                                "side":          current_sig,
+                                "entry":         round(latest_close, 2),
+                                "sl":            round(sl, 2),
+                                "tp":            round(tp, 2),
+                                "position_size": pos_size,
+                                "atr":           round(atr, 4),
+                                "rsi":           round(rsi, 2),
+                                "ml_probability": ml_prob,
+                                "ml_confidence":  ml_confidence,
+                            }
+                            success = send_signal_to_api(signal_payload)
+
+                            if success:
+                                last_sent_signal = current_sig
+                                last_signal_time_ms = latest_row["time"]
+                                last_trade = {
+                                    "signal":   current_sig,
+                                    "price":    latest_close,
+                                    "time":     candle_time,
+                                    "interval": INTERVAL,
+                                }
+                                log.info(f"✅ Signal [{current_sig}] sent & recorded.")
+                            else:
+                                log.error(
+                                    f"❌ Signal [{current_sig}] NOT delivered. "
+                                    "Will retry next cycle."
+                                )
                     else:
-                        log.error(
-                            f"❌ Signal [{current_sig}] NOT delivered. "
-                            "Will retry next cycle."
+                        log.info(
+                            f"💤 Signal = HOLD. No API call. "
+                            f"(last_sent_signal stays [{last_sent_signal}])."
                         )
-            else:
-                log.info(
-                    f"💤 Signal = HOLD. No API call. "
-                    f"(last_sent_signal stays [{last_sent_signal}])."
-                )
 
         log.info(f"✔️  Cycle #{cycle_count:04d} complete.\n")
 

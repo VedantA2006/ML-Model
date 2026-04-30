@@ -284,3 +284,13 @@
 2026-04-30 21:38:11 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
 2026-04-30 21:38:11 UTC  [INFO]  ✔️  Cycle #0008 complete.
 
+2026-04-30 23:24:32 UTC  [INFO]  Live engine initialised (Bybit).
+2026-04-30 23:24:32 UTC  [INFO]    Symbol=BTCUSDT  Interval=1h  API=https://btc-92mq.onrender.com/api/trade
+2026-04-30 23:24:32 UTC  [INFO]  ℹ️  ML filter disabled or modules not available
+2026-04-30 23:25:32 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 23:25:32 UTC  [INFO]  🔄 CYCLE #0001  —  2026-04-30 17:55:32 UTC
+2026-04-30 23:25:32 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 23:25:33 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 17:00:00+00:00)
+2026-04-30 23:25:33 UTC  [INFO]  📊 Closed candle  close=76213.70  ema13=76142.14  ema34=76200.71  ema89=76623.17  rsi=51.2  atr_pct=0.0057  vol_ok=False
+2026-04-30 23:25:33 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 23:25:33 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
