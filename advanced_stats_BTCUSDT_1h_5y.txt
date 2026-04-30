@@ -1,0 +1,25 @@
+==================================================
+  ADVANCED STRATEGY REPORT
+==================================================
+Final balance           : $389,261,360.15 (Started $1,000)
+Total return            : 389261.36× (38,926,036.01%)
+Profit factor           : 2.68
+Max drawdown            : 9.57%
+
+Total trades            : 1432 (706 TP / 726 SL)
+Win rate                : 49.3% (TP exits)
+Avg win                 : $880,281.53 (Per TP trade)
+Avg loss                : $319,860.05 (Per SL trade)
+
+Avg hold time           : 19.7h (Per trade)
+Max consec wins         : 9 (In a row)
+Max consec losses       : 10 (In a row)
+
+Avg trades per week     : 5.5
+Avg trades per month    : 24.0
+Avg return per week     : 149,880.23%
+Avg return per month    : 651,764.87%
+
+BUY win rate            : 52.0%
+SELL win rate           : 47.0%
+==================================================

@@ -1,0 +1,286 @@
+2026-04-30 21:01:29 UTC  [INFO]  Live engine initialised (Bybit).
+2026-04-30 21:01:29 UTC  [INFO]    Symbol=BTCUSDT  Interval=1h  API=https://btc-92mq.onrender.com/api/trade
+2026-04-30 21:01:29 UTC  [INFO]    Model loaded from 'trained_model.pkl' (threshold=0.54)
+2026-04-30 21:01:29 UTC  [INFO]  🤖 ML Trade Filter LOADED — filtering active
+2026-04-30 21:02:29 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:02:29 UTC  [INFO]  🔄 CYCLE #0001  —  2026-04-30 15:32:29 UTC
+2026-04-30 21:02:29 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:02:30 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:02:30 UTC  [INFO]  📊 Latest candle  close=76538.60  ema13=76146.86  ema34=76206.58  ema89=76635.19  rsi=57.4  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:02:30 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:02:30 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:02:30 UTC  [INFO]  ✔️  Cycle #0001 complete.
+
+2026-04-30 21:03:31 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:03:31 UTC  [INFO]  🔄 CYCLE #0002  —  2026-04-30 15:33:31 UTC
+2026-04-30 21:03:31 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:03:32 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:03:32 UTC  [INFO]  📊 Latest candle  close=76447.60  ema13=76133.86  ema34=76201.38  ema89=76633.17  rsi=56.0  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:03:32 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:03:32 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:03:32 UTC  [INFO]  ✔️  Cycle #0002 complete.
+
+2026-04-30 21:04:32 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:04:32 UTC  [INFO]  🔄 CYCLE #0003  —  2026-04-30 15:34:32 UTC
+2026-04-30 21:04:32 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:04:33 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:04:33 UTC  [INFO]  📊 Latest candle  close=76408.10  ema13=76128.21  ema34=76199.13  ema89=76632.29  rsi=55.3  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:04:33 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:04:33 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:04:33 UTC  [INFO]  ✔️  Cycle #0003 complete.
+
+2026-04-30 21:05:34 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:05:34 UTC  [INFO]  🔄 CYCLE #0004  —  2026-04-30 15:35:34 UTC
+2026-04-30 21:05:34 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:05:35 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:05:35 UTC  [INFO]  📊 Latest candle  close=76356.70  ema13=76120.87  ema34=76196.19  ema89=76631.15  rsi=54.4  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:05:35 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:05:35 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:05:35 UTC  [INFO]  ✔️  Cycle #0004 complete.
+
+2026-04-30 21:06:36 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:06:36 UTC  [INFO]  🔄 CYCLE #0005  —  2026-04-30 15:36:36 UTC
+2026-04-30 21:06:36 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:06:36 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:06:36 UTC  [INFO]  📊 Latest candle  close=76327.20  ema13=76116.66  ema34=76194.50  ema89=76630.49  rsi=53.9  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:06:36 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:06:36 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:06:36 UTC  [INFO]  ✔️  Cycle #0005 complete.
+
+2026-04-30 21:07:37 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:07:37 UTC  [INFO]  🔄 CYCLE #0006  —  2026-04-30 15:37:37 UTC
+2026-04-30 21:07:37 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:07:38 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:07:38 UTC  [INFO]  📊 Latest candle  close=76369.00  ema13=76122.63  ema34=76196.89  ema89=76631.42  rsi=54.6  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:07:38 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:07:38 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:07:38 UTC  [INFO]  ✔️  Cycle #0006 complete.
+
+2026-04-30 21:08:38 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:08:38 UTC  [INFO]  🔄 CYCLE #0007  —  2026-04-30 15:38:38 UTC
+2026-04-30 21:08:38 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:08:39 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:08:39 UTC  [INFO]  📊 Latest candle  close=76415.70  ema13=76129.30  ema34=76199.56  ema89=76632.46  rsi=55.4  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:08:39 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:08:39 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:08:39 UTC  [INFO]  ✔️  Cycle #0007 complete.
+
+2026-04-30 21:09:40 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:09:40 UTC  [INFO]  🔄 CYCLE #0008  —  2026-04-30 15:39:40 UTC
+2026-04-30 21:09:40 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:09:41 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:09:41 UTC  [INFO]  📊 Latest candle  close=76427.40  ema13=76130.97  ema34=76200.23  ema89=76632.72  rsi=55.6  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:09:41 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:09:41 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:09:41 UTC  [INFO]  ✔️  Cycle #0008 complete.
+
+2026-04-30 21:10:41 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:10:41 UTC  [INFO]  🔄 CYCLE #0009  —  2026-04-30 15:40:41 UTC
+2026-04-30 21:10:41 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:10:42 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:10:42 UTC  [INFO]  📊 Latest candle  close=76386.80  ema13=76125.17  ema34=76197.91  ema89=76631.82  rsi=54.9  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:10:42 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:10:42 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:10:42 UTC  [INFO]  ✔️  Cycle #0009 complete.
+
+2026-04-30 21:11:43 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:11:43 UTC  [INFO]  🔄 CYCLE #0010  —  2026-04-30 15:41:43 UTC
+2026-04-30 21:11:43 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:11:44 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:11:44 UTC  [INFO]  📊 Latest candle  close=76418.50  ema13=76129.70  ema34=76199.72  ema89=76632.52  rsi=55.5  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:11:44 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:11:44 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:11:44 UTC  [INFO]  ✔️  Cycle #0010 complete.
+
+2026-04-30 21:12:44 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:12:44 UTC  [INFO]  🔄 CYCLE #0011  —  2026-04-30 15:42:44 UTC
+2026-04-30 21:12:44 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:12:45 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:12:45 UTC  [INFO]  📊 Latest candle  close=76363.30  ema13=76121.81  ema34=76196.57  ema89=76631.30  rsi=54.5  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:12:45 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:12:45 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:12:45 UTC  [INFO]  ✔️  Cycle #0011 complete.
+
+2026-04-30 21:13:46 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:13:46 UTC  [INFO]  🔄 CYCLE #0012  —  2026-04-30 15:43:46 UTC
+2026-04-30 21:13:46 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:13:47 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:13:47 UTC  [INFO]  📊 Latest candle  close=76369.50  ema13=76122.70  ema34=76196.92  ema89=76631.43  rsi=54.6  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:13:47 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:13:47 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:13:47 UTC  [INFO]  ✔️  Cycle #0012 complete.
+
+2026-04-30 21:14:47 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:14:47 UTC  [INFO]  🔄 CYCLE #0013  —  2026-04-30 15:44:47 UTC
+2026-04-30 21:14:47 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:14:48 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:14:48 UTC  [INFO]  📊 Latest candle  close=76425.40  ema13=76130.68  ema34=76200.12  ema89=76632.68  rsi=55.6  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:14:48 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:14:48 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:14:48 UTC  [INFO]  ✔️  Cycle #0013 complete.
+
+2026-04-30 21:15:49 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:15:49 UTC  [INFO]  🔄 CYCLE #0014  —  2026-04-30 15:45:49 UTC
+2026-04-30 21:15:49 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:15:49 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:15:49 UTC  [INFO]  📊 Latest candle  close=76352.40  ema13=76120.26  ema34=76195.94  ema89=76631.05  rsi=54.3  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:15:49 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:15:49 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:15:49 UTC  [INFO]  ✔️  Cycle #0014 complete.
+
+2026-04-30 21:16:50 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:16:50 UTC  [INFO]  🔄 CYCLE #0015  —  2026-04-30 15:46:50 UTC
+2026-04-30 21:16:50 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:16:51 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:16:51 UTC  [INFO]  📊 Latest candle  close=76309.00  ema13=76114.06  ema34=76193.46  ema89=76630.09  rsi=53.5  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:16:51 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:16:51 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:16:51 UTC  [INFO]  ✔️  Cycle #0015 complete.
+
+2026-04-30 21:17:52 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:17:52 UTC  [INFO]  🔄 CYCLE #0016  —  2026-04-30 15:47:52 UTC
+2026-04-30 21:17:52 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:17:52 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:17:52 UTC  [INFO]  📊 Latest candle  close=76327.40  ema13=76116.68  ema34=76194.52  ema89=76630.50  rsi=53.9  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:17:52 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:17:52 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:17:52 UTC  [INFO]  ✔️  Cycle #0016 complete.
+
+2026-04-30 21:18:53 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:18:53 UTC  [INFO]  🔄 CYCLE #0017  —  2026-04-30 15:48:53 UTC
+2026-04-30 21:18:53 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:18:54 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:18:54 UTC  [INFO]  📊 Latest candle  close=76380.10  ema13=76124.21  ema34=76197.53  ema89=76631.67  rsi=54.8  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:18:54 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:18:54 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:18:54 UTC  [INFO]  ✔️  Cycle #0017 complete.
+
+2026-04-30 21:19:54 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:19:54 UTC  [INFO]  🔄 CYCLE #0018  —  2026-04-30 15:49:54 UTC
+2026-04-30 21:19:54 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:19:55 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:19:55 UTC  [INFO]  📊 Latest candle  close=76408.40  ema13=76128.26  ema34=76199.14  ema89=76632.30  rsi=55.3  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:19:55 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:19:55 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:19:55 UTC  [INFO]  ✔️  Cycle #0018 complete.
+
+2026-04-30 21:20:56 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:20:56 UTC  [INFO]  🔄 CYCLE #0019  —  2026-04-30 15:50:56 UTC
+2026-04-30 21:20:56 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:20:56 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:20:56 UTC  [INFO]  📊 Latest candle  close=76395.20  ema13=76126.37  ema34=76198.39  ema89=76632.00  rsi=55.1  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:20:56 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:20:56 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:20:56 UTC  [INFO]  ✔️  Cycle #0019 complete.
+
+2026-04-30 21:21:57 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:21:57 UTC  [INFO]  🔄 CYCLE #0020  —  2026-04-30 15:51:57 UTC
+2026-04-30 21:21:57 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:21:58 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:21:58 UTC  [INFO]  📊 Latest candle  close=76423.60  ema13=76130.43  ema34=76200.01  ema89=76632.64  rsi=55.6  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:21:58 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:21:58 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:21:58 UTC  [INFO]  ✔️  Cycle #0020 complete.
+
+2026-04-30 21:23:07 UTC  [INFO]  Live engine initialised (Bybit).
+2026-04-30 21:23:07 UTC  [INFO]    Symbol=BTCUSDT  Interval=1h  API=https://btc-92mq.onrender.com/api/trade
+2026-04-30 21:23:07 UTC  [INFO]    Model loaded from 'trained_model.pkl' (threshold=0.54)
+2026-04-30 21:23:07 UTC  [INFO]  🤖 ML Trade Filter LOADED — filtering active
+2026-04-30 21:24:07 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:24:07 UTC  [INFO]  🔄 CYCLE #0001  —  2026-04-30 15:54:07 UTC
+2026-04-30 21:24:07 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:24:08 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:24:08 UTC  [INFO]  📊 Latest candle  close=76425.40  ema13=76130.68  ema34=76200.12  ema89=76632.68  rsi=55.6  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:24:08 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:24:08 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:24:08 UTC  [INFO]  ✔️  Cycle #0001 complete.
+
+2026-04-30 21:26:15 UTC  [INFO]  Live engine initialised (Bybit).
+2026-04-30 21:26:15 UTC  [INFO]    Symbol=BTCUSDT  Interval=1h  API=https://btc-92mq.onrender.com/api/trade
+2026-04-30 21:26:15 UTC  [INFO]    Model loaded from 'trained_model.pkl' (threshold=0.54)
+2026-04-30 21:26:15 UTC  [INFO]  🤖 ML Trade Filter LOADED — filtering active
+2026-04-30 21:27:15 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:27:15 UTC  [INFO]  🔄 CYCLE #0001  —  2026-04-30 15:57:15 UTC
+2026-04-30 21:27:15 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:27:16 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 15:00:00+00:00)
+2026-04-30 21:27:16 UTC  [INFO]  📊 Latest candle  close=76471.00  ema13=76137.20  ema34=76202.72  ema89=76633.69  rsi=56.3  atr_pct=0.0058  vol_ok=False
+2026-04-30 21:27:16 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:27:16 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:27:16 UTC  [INFO]  ✔️  Cycle #0001 complete.
+
+2026-04-30 21:30:01 UTC  [INFO]  Live engine initialised (Bybit).
+2026-04-30 21:30:01 UTC  [INFO]    Symbol=BTCUSDT  Interval=1h  API=https://btc-92mq.onrender.com/api/trade
+2026-04-30 21:30:01 UTC  [INFO]    Model loaded from 'trained_model.pkl' (threshold=0.54)
+2026-04-30 21:30:01 UTC  [INFO]  🤖 ML Trade Filter LOADED — filtering active
+2026-04-30 21:31:01 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:31:01 UTC  [INFO]  🔄 CYCLE #0001  —  2026-04-30 16:01:01 UTC
+2026-04-30 21:31:01 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:31:01 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:31:01 UTC  [INFO]  📊 Latest candle  close=76396.20  ema13=76168.21  ema34=76211.14  ema89=76627.24  rsi=55.0  atr_pct=0.0054  vol_ok=False
+2026-04-30 21:31:01 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:31:01 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:31:01 UTC  [INFO]  ✔️  Cycle #0001 complete.
+
+2026-04-30 21:32:02 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:32:02 UTC  [INFO]  🔄 CYCLE #0002  —  2026-04-30 16:02:02 UTC
+2026-04-30 21:32:02 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:32:03 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:32:03 UTC  [INFO]  📊 Latest candle  close=76330.50  ema13=76158.83  ema34=76207.39  ema89=76625.78  rsi=53.5  atr_pct=0.0055  vol_ok=False
+2026-04-30 21:32:03 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:32:03 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:32:03 UTC  [INFO]  ✔️  Cycle #0002 complete.
+
+2026-04-30 21:33:04 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:33:04 UTC  [INFO]  🔄 CYCLE #0003  —  2026-04-30 16:03:04 UTC
+2026-04-30 21:33:04 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:33:05 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:33:05 UTC  [INFO]  📊 Latest candle  close=76347.10  ema13=76161.20  ema34=76208.34  ema89=76626.15  rsi=53.9  atr_pct=0.0055  vol_ok=False
+2026-04-30 21:33:05 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:33:05 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:33:05 UTC  [INFO]  ✔️  Cycle #0003 complete.
+
+2026-04-30 21:34:05 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:34:05 UTC  [INFO]  🔄 CYCLE #0004  —  2026-04-30 16:04:05 UTC
+2026-04-30 21:34:05 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:34:06 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:34:06 UTC  [INFO]  📊 Latest candle  close=76397.90  ema13=76168.45  ema34=76211.24  ema89=76627.28  rsi=55.0  atr_pct=0.0055  vol_ok=False
+2026-04-30 21:34:06 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:34:06 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:34:06 UTC  [INFO]  ✔️  Cycle #0004 complete.
+
+2026-04-30 21:35:07 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:35:07 UTC  [INFO]  🔄 CYCLE #0005  —  2026-04-30 16:05:07 UTC
+2026-04-30 21:35:07 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:35:07 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:35:07 UTC  [INFO]  📊 Latest candle  close=76421.10  ema13=76171.77  ema34=76212.57  ema89=76627.79  rsi=55.5  atr_pct=0.0055  vol_ok=False
+2026-04-30 21:35:07 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:35:07 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:35:07 UTC  [INFO]  ✔️  Cycle #0005 complete.
+
+2026-04-30 21:36:08 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:36:08 UTC  [INFO]  🔄 CYCLE #0006  —  2026-04-30 16:06:08 UTC
+2026-04-30 21:36:08 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:36:09 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:36:09 UTC  [INFO]  📊 Latest candle  close=76403.60  ema13=76169.27  ema34=76211.57  ema89=76627.40  rsi=55.1  atr_pct=0.0055  vol_ok=False
+2026-04-30 21:36:09 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:36:09 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:36:09 UTC  [INFO]  ✔️  Cycle #0006 complete.
+
+2026-04-30 21:37:09 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:37:09 UTC  [INFO]  🔄 CYCLE #0007  —  2026-04-30 16:07:09 UTC
+2026-04-30 21:37:09 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:37:10 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:37:10 UTC  [INFO]  📊 Latest candle  close=76401.40  ema13=76168.95  ema34=76211.44  ema89=76627.35  rsi=55.1  atr_pct=0.0055  vol_ok=False
+2026-04-30 21:37:10 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:37:10 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:37:10 UTC  [INFO]  ✔️  Cycle #0007 complete.
+
+2026-04-30 21:38:11 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:38:11 UTC  [INFO]  🔄 CYCLE #0008  —  2026-04-30 16:08:11 UTC
+2026-04-30 21:38:11 UTC  [INFO]  ───────────────────────────────────────────────────────
+2026-04-30 21:38:11 UTC  [INFO]  get_latest_data: fetched 201 candles (live candle: 2026-04-30 16:00:00+00:00)
+2026-04-30 21:38:11 UTC  [INFO]  📊 Latest candle  close=76435.00  ema13=76173.75  ema34=76213.36  ema89=76628.10  rsi=55.8  atr_pct=0.0055  vol_ok=False
+2026-04-30 21:38:11 UTC  [INFO]  🔍 Signal evaluation → [HOLD]  (last sent: [None])
+2026-04-30 21:38:11 UTC  [INFO]  💤 Signal = HOLD. No API call. (last_sent_signal stays [None]).
+2026-04-30 21:38:11 UTC  [INFO]  ✔️  Cycle #0008 complete.
+

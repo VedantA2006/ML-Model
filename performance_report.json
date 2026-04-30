@@ -1,0 +1,147 @@
+{
+  "training": {
+    "total_trades": 2136,
+    "train_size": 1495,
+    "test_size": 641,
+    "train_metrics": {
+      "accuracy": 0.6214046822742475,
+      "precision": 0.9859154929577465,
+      "recall": 0.11023622047244094,
+      "f1": 0.19830028328611898,
+      "roc_auc": 0.8738353781358725
+    },
+    "test_metrics": {
+      "accuracy": 0.6302652106084243,
+      "precision": 0.6190476190476191,
+      "recall": 0.05371900826446281,
+      "f1": 0.09885931558935361,
+      "roc_auc": 0.5465264400671099
+    },
+    "oob_score": null
+  },
+  "comparison": {
+    "original": {
+      "label": "ORIGINAL (no ML)",
+      "trades": 2136,
+      "wins": 877,
+      "losses": 1259,
+      "win_rate": 41.06,
+      "profit_factor": 1.533,
+      "total_pnl": 7947790.26,
+      "avg_pnl": 3720.8756,
+      "max_drawdown": 16.18
+    },
+    "ml_filtered": {
+      "label": "ML-FILTERED (prob >= 0.40)",
+      "trades": 1452,
+      "wins": 775,
+      "losses": 677,
+      "win_rate": 53.37,
+      "profit_factor": 1.74,
+      "total_pnl": 7275529.39,
+      "avg_pnl": 5010.6952,
+      "max_drawdown": 16.18
+    },
+    "high_confidence": {
+      "label": "HIGH CONFIDENCE (prob > 0.55)",
+      "trades": 87,
+      "wins": 78,
+      "losses": 9,
+      "win_rate": 89.66,
+      "profit_factor": 4.25,
+      "total_pnl": 935060.6,
+      "avg_pnl": 10747.823,
+      "max_drawdown": 7.4
+    },
+    "rejected": {
+      "label": "REJECTED (prob < 0.40)",
+      "trades": 684,
+      "wins": 102,
+      "losses": 582,
+      "win_rate": 14.91,
+      "profit_factor": 1.132,
+      "total_pnl": 672260.87,
+      "avg_pnl": 982.8375,
+      "max_drawdown": 13.61
+    }
+  },
+  "feature_importances": {
+    "close_vs_ema34_pct": 0.10333626309347502,
+    "rsi_distance_50": 0.09934966107965064,
+    "ema34_ema89_gap_pct": 0.09727674434727655,
+    "atr_rsi_interaction": 0.09708742574402218,
+    "vol_vs_ma_pct": 0.09030213380687091,
+    "entry_atr_pct": 0.08582069667128144,
+    "trend_strength": 0.08480612685336522,
+    "entry_rsi": 0.08468058541814187,
+    "volume_surge": 0.08452146668788259,
+    "ema13_ema34_gap_pct": 0.08022295912853376,
+    "ema_spread_13_89": 0.07475723753629941,
+    "rsi_zone": 0.010773953427591281,
+    "atr_zone": 0.005671512239774191,
+    "signal_type": 0.0008265566892027223,
+    "ema_alignment_score": 0.0005666772766320685
+  },
+  "walk_forward": [
+    {
+      "fold": 1,
+      "train_size": 200,
+      "test_size": 387,
+      "accuracy": 0.5426356589147286,
+      "precision": 0.424,
+      "f1": 0.3745583038869258,
+      "roc_auc": 0.530982256370571,
+      "pf": 1.84,
+      "trades_taken": 125,
+      "wr": 42.4
+    },
+    {
+      "fold": 2,
+      "train_size": 587,
+      "test_size": 387,
+      "accuracy": 0.5297157622739018,
+      "precision": 0.40860215053763443,
+      "f1": 0.29457364341085274,
+      "roc_auc": 0.4899262899262899,
+      "pf": 1.727,
+      "trades_taken": 93,
+      "wr": 40.9
+    },
+    {
+      "fold": 3,
+      "train_size": 974,
+      "test_size": 387,
+      "accuracy": 0.5322997416020672,
+      "precision": 0.4411764705882353,
+      "f1": 0.24896265560165975,
+      "roc_auc": 0.5120468910377614,
+      "pf": 1.974,
+      "trades_taken": 68,
+      "wr": 44.1
+    },
+    {
+      "fold": 4,
+      "train_size": 1361,
+      "test_size": 387,
+      "accuracy": 0.6046511627906976,
+      "precision": 0.5,
+      "f1": 0.3855421686746988,
+      "roc_auc": 0.5710574828221887,
+      "pf": 2.5,
+      "trades_taken": 96,
+      "wr": 50.0
+    },
+    {
+      "fold": 5,
+      "train_size": 1748,
+      "test_size": 387,
+      "accuracy": 0.58656330749354,
+      "precision": 0.41304347826086957,
+      "f1": 0.3220338983050847,
+      "roc_auc": 0.4993141289437586,
+      "pf": 1.759,
+      "trades_taken": 92,
+      "wr": 41.3
+    }
+  ]
+}

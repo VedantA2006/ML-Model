@@ -1,0 +1,188 @@
+{
+  "best_params": {
+    "rsi_buy_threshold": 62,
+    "rsi_sell_threshold": 45,
+    "atr_gate": 0.0015,
+    "sl_mult": 2.5,
+    "rr_ratio": 2.9000000000000004
+  },
+  "best_score": 2.0479584581218515,
+  "n_trials": 50,
+  "constraints": {
+    "min_profit_factor": 2.0,
+    "max_drawdown_pct": 20.0,
+    "min_trades": 50
+  },
+  "top_10_trials": [
+    {
+      "trial": 48,
+      "params": {
+        "rsi_buy_threshold": 62,
+        "rsi_sell_threshold": 45,
+        "atr_gate": 0.0015,
+        "sl_mult": 2.5,
+        "rr_ratio": 2.9000000000000004
+      },
+      "pf_train": 2.84,
+      "pf_test": 2.758,
+      "dd_train": 8.8,
+      "dd_test": 8.66,
+      "n_train": 1045,
+      "n_test": 478,
+      "score": 2.048
+    },
+    {
+      "trial": 8,
+      "params": {
+        "rsi_buy_threshold": 47,
+        "rsi_sell_threshold": 45,
+        "atr_gate": 0.001,
+        "sl_mult": 2.4000000000000004,
+        "rr_ratio": 2.1
+      },
+      "pf_train": 2.709,
+      "pf_test": 2.623,
+      "dd_train": 8.6,
+      "dd_test": 8.66,
+      "n_train": 1326,
+      "n_test": 614,
+      "score": 1.9914
+    },
+    {
+      "trial": 10,
+      "params": {
+        "rsi_buy_threshold": 52,
+        "rsi_sell_threshold": 49,
+        "atr_gate": 0.0025,
+        "sl_mult": 2.5,
+        "rr_ratio": 3.1
+      },
+      "pf_train": 2.817,
+      "pf_test": 2.812,
+      "dd_train": 8.63,
+      "dd_test": 9.57,
+      "n_train": 983,
+      "n_test": 452,
+      "score": 1.9666
+    },
+    {
+      "trial": 43,
+      "params": {
+        "rsi_buy_threshold": 52,
+        "rsi_sell_threshold": 48,
+        "atr_gate": 0.0025,
+        "sl_mult": 2.5,
+        "rr_ratio": 3.1
+      },
+      "pf_train": 2.817,
+      "pf_test": 2.812,
+      "dd_train": 8.63,
+      "dd_test": 9.57,
+      "n_train": 983,
+      "n_test": 452,
+      "score": 1.9666
+    },
+    {
+      "trial": 45,
+      "params": {
+        "rsi_buy_threshold": 60,
+        "rsi_sell_threshold": 46,
+        "atr_gate": 0.0015,
+        "sl_mult": 2.5,
+        "rr_ratio": 3.1
+      },
+      "pf_train": 2.82,
+      "pf_test": 2.778,
+      "dd_train": 8.63,
+      "dd_test": 9.57,
+      "n_train": 993,
+      "n_test": 457,
+      "score": 1.9501
+    },
+    {
+      "trial": 21,
+      "params": {
+        "rsi_buy_threshold": 53,
+        "rsi_sell_threshold": 48,
+        "atr_gate": 0.0025,
+        "sl_mult": 2.5,
+        "rr_ratio": 3.2
+      },
+      "pf_train": 2.868,
+      "pf_test": 2.739,
+      "dd_train": 8.54,
+      "dd_test": 9.57,
+      "n_train": 969,
+      "n_test": 438,
+      "score": 1.9327
+    },
+    {
+      "trial": 11,
+      "params": {
+        "rsi_buy_threshold": 52,
+        "rsi_sell_threshold": 48,
+        "atr_gate": 0.0025,
+        "sl_mult": 2.5,
+        "rr_ratio": 3.3
+      },
+      "pf_train": 2.793,
+      "pf_test": 2.727,
+      "dd_train": 9.36,
+      "dd_test": 9.57,
+      "n_train": 949,
+      "n_test": 431,
+      "score": 1.9238
+    },
+    {
+      "trial": 31,
+      "params": {
+        "rsi_buy_threshold": 52,
+        "rsi_sell_threshold": 48,
+        "atr_gate": 0.0025,
+        "sl_mult": 2.5,
+        "rr_ratio": 3.3
+      },
+      "pf_train": 2.793,
+      "pf_test": 2.727,
+      "dd_train": 9.36,
+      "dd_test": 9.57,
+      "n_train": 949,
+      "n_test": 431,
+      "score": 1.9238
+    },
+    {
+      "trial": 41,
+      "params": {
+        "rsi_buy_threshold": 52,
+        "rsi_sell_threshold": 51,
+        "atr_gate": 0.0025,
+        "sl_mult": 2.5,
+        "rr_ratio": 3.3
+      },
+      "pf_train": 2.793,
+      "pf_test": 2.727,
+      "dd_train": 9.36,
+      "dd_test": 9.57,
+      "n_train": 949,
+      "n_test": 431,
+      "score": 1.9238
+    },
+    {
+      "trial": 24,
+      "params": {
+        "rsi_buy_threshold": 55,
+        "rsi_sell_threshold": 53,
+        "atr_gate": 0.003,
+        "sl_mult": 2.5,
+        "rr_ratio": 2.6
+      },
+      "pf_train": 2.741,
+      "pf_test": 2.686,
+      "dd_train": 9.07,
+      "dd_test": 10.48,
+      "n_train": 1101,
+      "n_test": 494,
+      "score": 1.7793
+    }
+  ]
+}
